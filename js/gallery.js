@@ -3,6 +3,7 @@
 function upDate(previewPic){
     document.getElementById("image").style.backgroundImage = `url('${previewPic.src}')`;
     document.getElementById("image").innerHTML = previewPic.alt;
+    console.log("Works");
  /* In this function you should 
     1) change the url for the background image of the div with the id = "image" 
     to the source file of the preview image
@@ -25,3 +26,10 @@ function unDo(){
     */
 		
 	}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const previewImages = document.querySelectorAll(".preview");
+    previewImages.forEach((img) => {
+        img.setAttribute("tabindex", "0");
+    });
+});
